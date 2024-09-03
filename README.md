@@ -3,15 +3,15 @@
 ## ABOUT
 This integration connects BloodHound to ServiceNow via their API. It automatically creates tickets in ServiceNow, including a title, a detailed description with information about the, principals involved, the source principal, the target principal, remediation steps and BHE AttackPath Description. Additionally, it updates the severity ratings of existing tickets if changes occur within BloodHound.
 
-## Installation/Requirerments
-Requierments:
-1. Python 3.12
+## Installation/Requirements
+Installation/Requirements:
+1. Python 3.x (developed with Python 3.12)
 2. BloodHound API [ https://support.bloodhoundenterprise.io/hc/en-us/articles/11311053342619-Working-with-the-BloodHound-API ]
 
 
 Packages:
 1. dotenv
-3. requests 
+2. requests 
 
 ## Usage
 Instructions on how to use the project:
@@ -54,9 +54,9 @@ incident_data = {
 }
 ```
 
-2. Disabling updates for uregency_score and impact_score
+2. Disabling updates for urgency_score and impact_score
 
-To disable the automatic updates of impact and urency within your ServiceNow environment remove the following from the codebase:
+To disable the automatic updates of impact and urgency within your ServiceNow environment remove the following from the codebase:
 ```
 ## Update Severity If Needed
 if response.json()['result'][0].get('impact') != str(impact_score) or response.json()['result'][0].get('urgency') != str(urgency_score):
