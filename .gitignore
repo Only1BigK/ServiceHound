@@ -1,0 +1,15 @@
+# Ignore environment variable files
+.env
+.env.local
+.env.*.local
+
+# Ignore log files
+*.log
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore any other secret files
+secrets/
+*.key
+*.pem
