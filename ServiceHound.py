@@ -1,6 +1,6 @@
 ###########################
 #
-# Created By: Elie
+# Created By: Elie Ajaka
 # https://github.com/Eli4m
 # 
 # Licence: MIT License
@@ -112,7 +112,7 @@ for finding in domain_findings:
         if response.status_code == 200 and response.json()['result']:
             print(f"Incident already exists! Incident number: {response.json()['result'][0]['number']}")
             
-            ## Update Severity If Needed
+            # ## NOTE: Uncomment to Update Severity If Needed.
             # if response.json()['result'][0].get('impact') != str(impact_score) or response.json()['result'][0].get('urgency') != str(urgency_score):
             #     update_data={
             #         "impact": impact_score,
@@ -121,7 +121,7 @@ for finding in domain_findings:
             #     print(f"[UPDATED] Severity for: {response.json()['result'][0]['number']}")
             #     requests.patch(f"{url}/{response.json()['result'][0].get('sys_id')}", auth=(username,password), json=update_data)
 
-            # ## Update Description If Needed
+            # ## NOTE: Uncomment to Update Description If Needed.
             # if response.json()['result'][0].get('description') != description:
             #     update_data={
             #         "description": description

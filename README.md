@@ -1,6 +1,7 @@
+
 # ServiceHound - BloodHound to ServiceNow 
 
-## ABOUT
+### ABOUT
 This integration connects BloodHound to ServiceNow via their API. It automatically creates tickets in ServiceNow, including a title, a detailed description with information about the principals involved, the source principal, the target principal, remediation steps and BHE AttackPath Description. Additionally, it updates the severity ratings of existing tickets if changes occur within BloodHound aswell as the description.
 
 ## Installation/Requirements:
@@ -88,5 +89,5 @@ if details['limit'] != details['count'] and details['count'] > 10:
 - [x] Post BloodHound Data to ServiceNow.
 - [x] Update SNOW Incidents priority based on the new impact and urgency.
 - [x] Update SNOW Incidents with latest BHE description/data e.g (BHE Description, principals involved, source principal, target principal, and remediation steps).
-- [x] Increase the ammount of principals pulled and sent to ServiceNow, for ticket creation.
+- [x] Increase the amount of principals pulled and sent to ServiceNow, for ticket creation.
 - [ ] Implement User friendly customisation options.
