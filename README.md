@@ -91,3 +91,6 @@ if details['limit'] != details['count'] and details['count'] > 10:
 - [x] Update SNOW Incidents with latest BHE description/data e.g (BHE Description, principals involved, source principal, target principal, and remediation steps).
 - [x] Increase the amount of principals pulled and sent to ServiceNow, for ticket creation.
 - [ ] Implement User friendly customisation options.
+
+## Additional Information
+- To convert this to an executable, you can use tools such as PyInstaller.
