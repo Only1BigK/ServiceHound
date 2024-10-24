@@ -2,12 +2,17 @@
 # ServiceHound - BloodHound to ServiceNow 
 
 ### ABOUT
-This integration connects BloodHound to ServiceNow via their API. It automatically creates tickets in ServiceNow, including a title, a detailed description with information about the principals involved, the source principal, the target principal, remediation steps and BHE AttackPath Description. Additionally, it updates the severity ratings of existing tickets if changes occur within BloodHound aswell as the description.
+This integration connects BloodHound to ServiceNow via their API. It automatically creates tickets in ServiceNow, including a title, a detailed description with information about the principals involved, the source principal, the target principal, remediation steps, and a BHE AttackPath Description. Additionally, it updates the severity ratings of existing tickets if changes occur within BloodHound and the description.
 
 ## Installation/Requirements:
 #### Necessary Components
 1. Python 3.x (developed with Python 3.12)
-2. BloodHound API [ https://support.bloodhoundenterprise.io/hc/en-us/articles/11311053342619-Working-with-the-BloodHound-API ]
+2. pip install blood-hound-python-client
+3. pip install python-dotenv
+4. pip install requests
+5. pip install httpx
+6. pip install attrs
+7. BloodHound API [ https://support.bloodhoundenterprise.io/hc/en-us/articles/11311053342619-Working-with-the-BloodHound-API ]
 
 #### Packages:
 1. dotenv
@@ -15,7 +20,7 @@ This integration connects BloodHound to ServiceNow via their API. It automatical
 
 ## Usage
 Instructions on how to use the project:
-1. Replace the following with your own data.
+1. Replace the following with your data.
 ```
 url = "[YOUR SERVICE NOW API ENDPOINT]"
 username = os.getenv("[SERVICE NOW USERNAME]")
@@ -25,7 +30,16 @@ password = os.getenv("[SERVICE NOW PASSWD]")
 credentials = Credentials(os.getenv('[YOUR BLOODHOUND_TOKEN_ID]'), os.getenv('[YOUR BLOODHOUND_TOKEN_KEY]'))
 client = BHEClient('https', '[YOUR BLOODHOUND ENTERPRISE URL]', 443, credentials)
 ```
-
+Update the folder location containing the folder 'blood_hound_api_client'. In the example below, the folder is within the ServiceHound folder. It can be found under blood_hound_api_client_002/sdk/blood_hound_api_client/
+```
+import sys
+sys.path.append('/home/hackingdb/Tools/ServiceHound')
+from blood_hound_api_client import *
+import os 
+from dotenv import load_dotenv
+import requests
+import sys
+```
 Update the impact_score and urgency_score values to your liking.
 ```
 match priority_classification:
